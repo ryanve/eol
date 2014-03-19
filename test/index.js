@@ -7,7 +7,7 @@
   var aok = common ? require('aok') : root.aok;
   var eol = common ? require('../src') : root.eol;
   var platform = typeof process != 'undefined' && process.platform;
-  var meths = ['lf', 'cr', 'crlf', 'normalize'];
+  var meths = ['lf', 'cr', 'crlf', 'auto'];
   var chars = ['\n', '\r', '\r\n', 'win32' === platform ? '\r\n' : '\n'];
   var sample = ' ' + chars.join() + 'text' + chars.join();
   
@@ -23,10 +23,10 @@
     aok(method + ' normalizes', !aok.fail(chars, function(c) {
       return contains(chars[i], c) === contains(normalized, c);
     }));
-    return eol.normalize(sample) === normalized;
+    return eol.auto(sample) === normalized;
   });
   
-  aok('normalize agress', 2 === aok.pass(meths, function(method) {
-    return eol.normalize(sample) === eol[method](sample);
+  aok('auto agress', 2 === aok.pass(meths, function(method) {
+    return eol.auto(sample) === eol[method](sample);
   }));
 }(this));

@@ -11,7 +11,7 @@
   api['lf'] = converts('\n');
   api['cr'] = converts('\r');
   api['crlf'] = converts('\r\n');
-  api['normalize'] = converts(
+  api['auto'] = converts(
     typeof process != 'undefined' && 'win32' === process.platform ? '\r\n' : '\n'
   );
   return api;
