@@ -1,4 +1,4 @@
-(function(root, name, make) {
+!function(root, name, make) {
   if (typeof module != 'undefined' && module.exports) module.exports = make();
   else root[name] = make();
 }(this, 'eol', function() {
@@ -11,5 +11,8 @@
   api['lf'] = converts('\n');
   api['cr'] = converts('\r');
   api['crlf'] = converts('\r\n');
+  api['normalize'] = converts(
+    typeof process != 'undefined' && 'win32' === process.platform ? '\r\n' : '\n'
+  );
   return api;
-}));
+});
