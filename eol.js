@@ -1,10 +1,9 @@
 /*!
- * eol 0.1.0+201403121730
+ * eol 0.2.0+201403200220
  * https://github.com/ryanve/eol
- * MIT License (c) 2014 Ryan Van Etten
+ * MIT License, 2014 Ryan Van Etten
  */
-
-(function(root, name, make) {
+!function(root, name, make) {
   if (typeof module != 'undefined' && module.exports) module.exports = make();
   else root[name] = make();
 }(this, 'eol', function() {
@@ -17,5 +16,8 @@
   api['lf'] = converts('\n');
   api['cr'] = converts('\r');
   api['crlf'] = converts('\r\n');
+  api['auto'] = converts(
+    typeof process != 'undefined' && 'win32' === process.platform ? '\r\n' : '\n'
+  );
   return api;
-}));
+});
