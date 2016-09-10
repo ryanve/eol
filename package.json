@@ -20,6 +20,7 @@
     "grunt-contrib-jshint": "~0.8.0"
   },
   "jshintConfig": {
+    "asi": true,
     "boss": true,
     "browser": true,
     "debug": true,
@@ -29,7 +30,7 @@
     "expr": true,
     "globals": {
       "define": true,
-      "ender": true 
+      "ender": true
     },
     "jquery": true,
     "latedef": "nofunc",
