@@ -1,7 +1,7 @@
 {
   "name": "eol",
   "description": "Newline character converter",
-  "version": "0.2.0",
+  "version": "0.3.0-0",
   "homepage": "https://github.com/ryanve/eol",
   "license": "MIT",
   "author": "Ryan Van Etten",
@@ -15,7 +15,6 @@
     "aok": "~1.8.1",
     "universal": "~0.0.5",
     "grunt": "~0.4.4",
-    "grunt-contrib-uglify": "~0.3.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-jshint": "~0.8.0"
   },
