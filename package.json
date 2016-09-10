@@ -19,6 +19,9 @@
     "type": "git",
     "url": "https://github.com/ryanve/eol.git"
   },
+  "bugs": {
+    "url": "https://github.com/ryanve/eol/issues"
+  },
   "devDependencies": {
     "aok": "^1.9.0",
     "grunt": "~0.4.4",
