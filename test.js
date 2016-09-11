@@ -19,6 +19,10 @@
   aok('sample contains newlines', contains(sample, '\n') && contains(sample, '\r'))
   aok('returns other strings as is', eol.auto('random') === 'random')
   aok('returns empty strings as is', eol.auto('') === '')
+  aok('whitespace intact', eol.lf(' \t ') === ' \t ')
+  aok('repeat newlines intact lf', eol.lf('\n\n\r\r') === '\n\n\n\n')
+  aok('repeat newlines intact lf', eol.cr('\n\n\r\r') === '\r\r\r\r')
+  aok('repeat newlines intact crlf', eol.crlf('\r\n\r\n') === '\r\n\r\n')
 
   aok.pass(meths, function(method, i) {
     var normalized = eol[method](sample)
