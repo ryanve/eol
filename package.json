@@ -8,10 +8,15 @@
   "keywords": [
     "eol",
     "newline",
+    "newlines",
     "convert",
     "converter",
     "conversion",
     "character",
+    "formatting",
+    "format",
+    "string",
+    "file",
     "ender"
   ],
   "main": "eol.js",
