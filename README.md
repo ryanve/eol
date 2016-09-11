@@ -20,5 +20,4 @@
 - <b>@return</b> string with line endings normalized to `\r`
 
 ## License
-
-[MIT](package.json#L6-L7)
+MIT
