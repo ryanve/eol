@@ -1,6 +1,14 @@
 # eol
 #### [Newline](http://en.wikipedia.org/wiki/Newline) character converter for JavaScript
 
+```sh
+npm install eol --save
+```
+
+```js
+var eol = require('eol')
+```
+
 ## API
 
 ### `eol.auto(text)`
@@ -20,5 +28,4 @@
 - <b>@return</b> string with line endings normalized to `\r`
 
 ## License
-
-[MIT](package.json#L6-L7)
+MIT

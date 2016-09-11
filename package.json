@@ -1,40 +1,49 @@
 {
   "name": "eol",
   "description": "Newline character converter",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/ryanve/eol",
   "license": "MIT",
   "author": "Ryan Van Etten",
-  "keywords": ["eol", "newline", "convert", "converter", "conversion", "character", "ender"],
-  "main": "./eol.js",
+  "keywords": [
+    "eol",
+    "newline",
+    "newlines",
+    "convert",
+    "converter",
+    "conversion",
+    "character",
+    "formatting",
+    "format",
+    "string",
+    "file",
+    "ender"
+  ],
+  "main": "eol.js",
+  "scripts": {
+    "pretest": "jshint eol.js && jshint test.js",
+    "test": "node test.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ryanve/eol.git"
   },
+  "bugs": {
+    "url": "https://github.com/ryanve/eol/issues"
+  },
   "devDependencies": {
-    "aok": "~1.8.1",
-    "universal": "~0.0.5",
-    "grunt": "~0.4.4",
-    "grunt-contrib-uglify": "~0.3.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.8.0"
+    "aok": "^1.9.0",
+    "jshint": "^2.9.3"
   },
   "jshintConfig": {
+    "asi": true,
     "boss": true,
     "browser": true,
-    "debug": true,
-    "devel": true,
     "eqnull": true,
-    "evil": true,
     "expr": true,
-    "globals": {
-      "define": true,
-      "ender": true 
-    },
-    "jquery": true,
     "latedef": "nofunc",
     "laxcomma": true,
-    "maxerr": 10,
+    "maxerr": 5,
     "node": true,
     "sub": true,
     "supernew": true,
