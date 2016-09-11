@@ -26,7 +26,7 @@
     return eol.auto(sample) === normalized;
   });
 
-  aok('auto agress', 2 === aok.pass(meths, function(method) {
+  aok('auto agrees', 2 === aok.pass(meths, function(method) {
     return eol.auto(sample) === eol[method](sample);
   }));
 }(this);
