@@ -15,7 +15,7 @@
     throw new Error('FAILED TEST: ' + this.id)
   }
 
-  aok('contains() sees contained text', contains('ab', 'a') === true)
+  aok('contains sees contained text', contains('ab', 'a') === true)
   aok('sample contains newlines', contains(sample, '\n') && contains(sample, '\r'))
   aok('returns other strings as is', eol.auto('random') === 'random')
   aok('returns empty strings as is', eol.auto('') === '')
