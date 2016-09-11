@@ -21,8 +21,8 @@
   ],
   "main": "eol.js",
   "scripts": {
-    "lint": "jshint eol.js && jshint test.js",
-    "test": "npm run lint && node test.js"
+    "pretest": "jshint eol.js && jshint test.js",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
