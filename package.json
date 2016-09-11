@@ -15,6 +15,10 @@
     "ender"
   ],
   "main": "eol.js",
+  "scripts": {
+    "lint": "jshint eol.js && jshint test.js",
+    "test": "npm run lint && node test.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ryanve/eol.git"
@@ -23,11 +27,8 @@
     "url": "https://github.com/ryanve/eol/issues"
   },
   "devDependencies": {
-    "aok": "^1.9.0",
-    "grunt": "~0.4.4",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.8.0",
-    "universal": "~0.0.5"
+    "jshint": "^2.9.3",
+    "aok": "^1.9.0"
   },
   "jshintConfig": {
     "asi": true,

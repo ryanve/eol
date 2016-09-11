@@ -1,23 +1,22 @@
-/*!
- * eol 0.2.0+201403200220
- * https://github.com/ryanve/eol
- * MIT License, 2014 Ryan Van Etten
- */
 !function(root, name, make) {
-  if (typeof module != 'undefined' && module.exports) module.exports = make();
-  else root[name] = make();
+  if (typeof module != 'undefined' && module.exports) module.exports = make()
+  else root[name] = make()
 }(this, 'eol', function() {
+
+  var api = {}
+  var isWindows = typeof process != 'undefined' && 'win32' === process.platform
+  var newline = /\r\n|\r|\n/g
+
   function converts(to) {
     return function(text) {
-      return text.replace(newline, to);
-    };
+      return text.replace(newline, to)
+    }
   }
-  var api = {}, newline = /\r\n|\r|\n/g;
-  api['lf'] = converts('\n');
-  api['cr'] = converts('\r');
-  api['crlf'] = converts('\r\n');
-  api['auto'] = converts(
-    typeof process != 'undefined' && 'win32' === process.platform ? '\r\n' : '\n'
-  );
-  return api;
+
+  api['lf'] = converts('\n')
+  api['cr'] = converts('\r')
+  api['crlf'] = converts('\r\n')
+  api['auto'] = converts(isWindows ? '\r\n' : '\n')
+
+  return api
 });
