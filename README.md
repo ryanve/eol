@@ -1,6 +1,14 @@
 # eol
 #### [Newline](http://en.wikipedia.org/wiki/Newline) character converter for JavaScript
 
+```sh
+npm install eol --save
+```
+
+```js
+var eol = require('eol')
+```
+
 ## API
 
 ### `eol.auto(text)`
