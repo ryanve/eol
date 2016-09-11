@@ -6,9 +6,9 @@
   var common = typeof module != 'undefined' && !!module.exports
   var aok = common ? require('aok') : root.aok
   var eol = common ? require('./') : root.eol
-  var platform = typeof process != 'undefined' && process.platform
+  var isWindows = typeof process != 'undefined' && 'win32' === process.platform
   var meths = ['lf', 'cr', 'crlf', 'auto']
-  var chars = ['\n', '\r', '\r\n', 'win32' === platform ? '\r\n' : '\n']
+  var chars = ['\n', '\r', '\r\n', isWindows ? '\r\n' : '\n']
   var sample = ' ' + chars.join() + 'text' + chars.join()
 
   aok.prototype.fail = function() {
@@ -30,9 +30,10 @@
     return eol.auto(sample) === normalized
   })
 
-  aok('auto agrees', 2 === aok.pass(meths, function(method) {
+  aok('auto is aware', eol[isWindows ? 'crlf' : 'lf'](sample) === eol.auto(sample))
+  aok('auto matches only 1 and self', aok.pass(meths, function(method) {
     return eol.auto(sample) === eol[method](sample);
-  }))
+  }) === 2)
 
   aok.log('All tests passed =)')
 }(this);
