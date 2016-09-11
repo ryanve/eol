@@ -20,9 +20,9 @@
   aok('returns other strings as is', eol.auto('random') === 'random')
   aok('returns empty strings as is', eol.auto('') === '')
   aok('whitespace intact', eol.lf(' \t ') === ' \t ')
-  aok('repeat newlines intact lf', eol.lf('\n\n\r\r') === '\n\n\n\n')
-  aok('repeat newlines intact cr', eol.cr('\n\n\r\r') === '\r\r\r\r')
-  aok('repeat newlines intact crlf', eol.crlf('\r\n\r\n') === '\r\n\r\n')
+  aok('lf repeat newlines intact', eol.lf('\n\n\r\r') === '\n\n\n\n')
+  aok('cr repeat newlines intact', eol.cr('\n\n\r\r') === '\r\r\r\r')
+  aok('crlf repeat newlines intact', eol.crlf('\r\n\r\n') === '\r\n\r\n')
 
   aok.pass(meths, function(method, i) {
     var normalized = eol[method](sample)
