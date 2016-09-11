@@ -1,16 +1,13 @@
 !function(root) {
-  function contains(str, needle) {
-    return !!~str.indexOf(needle);
-  }
-
   var common = typeof module != 'undefined' && !!module.exports;
   var aok = common ? require('aok') : root.aok;
   var eol = common ? require('./') : root.eol;
+  var contains = require('string-contains');
   var platform = typeof process != 'undefined' && process.platform;
   var meths = ['lf', 'cr', 'crlf', 'auto'];
   var chars = ['\n', '\r', '\r\n', 'win32' === platform ? '\r\n' : '\n'];
   var sample = ' ' + chars.join() + 'text' + chars.join();
-  
+
   aok.fail(meths, function(method, i) {
     if (!contains('ab', 'a')) return void aok.warn('contains() does not return expected result.');
     if (!contains(sample, chars[i])) return void aok.warn('Sample lacks the needed characters.');
@@ -25,7 +22,7 @@
     }));
     return eol.auto(sample) === normalized;
   });
-  
+
   aok('auto agress', 2 === aok.pass(meths, function(method) {
     return eol.auto(sample) === eol[method](sample);
   }));
