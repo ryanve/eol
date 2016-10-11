@@ -27,5 +27,13 @@ var eol = require('eol')
 - Normalize line endings in <var>text</var> to <b>CR</b> (Mac OS)
 - <b>@return</b> string with line endings normalized to `\r`
 
+### `eol.before(text)`
+- Add linebreak before <var>text</var>
+- <b>@return</b> string with linebreak added before text
+
+### `eol.after(text)`
+- Add linebreak after <var>text</var>
+- <b>@return</b> string with linebreak added after text
+
 ## License
 MIT
