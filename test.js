@@ -39,5 +39,10 @@
     return eol.auto(sample) === eol[method](sample);
   }) === 2)
 
+  aok('before', eol.lf(eol.before('text')) === '\ntext')
+  aok('before2', eol.lf(eol.before('\ntext\n')) === '\n\ntext\n')
+  aok('after', eol.lf(eol.after('text')) === 'text\n')
+  aok('after2', eol.lf(eol.after('\ntext\n')) === '\ntext\n\n')
+
   aok.log('All tests passed =)')
 }(this);
