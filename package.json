@@ -1,7 +1,7 @@
 {
   "name": "eol",
   "description": "Newline character converter",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "homepage": "https://github.com/ryanve/eol",
   "license": "MIT",
   "author": "Ryan Van Etten",
@@ -21,7 +21,8 @@
   ],
   "main": "eol.js",
   "scripts": {
-    "pretest": "jshint eol.js && jshint test.js",
+    "lint": "jshint eol.js && jshint test.js",
+    "pretest": "npm run lint",
     "test": "node test.js"
   },
   "repository": {
