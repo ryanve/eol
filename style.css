@@ -1,6 +1,6 @@
-.scheme--white { background: #fafafa; color: #020202 }
-.scheme--dark { background: navy; color: #fafafa }
-.scheme--light { background: gainsboro; color: navy }
+.scheme--white { background: whitesmoke; color: black }
+.scheme--dark { background: blue; color: whitesmoke }
+.scheme--light { background: gainsboro; color: blue }
 
 *, :before, :after { box-sizing: border-box }
 html { font: 1em/2 sans-serif; }
