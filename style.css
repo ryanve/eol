@@ -60,6 +60,7 @@ h1, h2 { line-height: 1 }
 }
 
 .area {
+  white-space: pre-wrap;
   border: 2px solid gainsboro;
   padding: .25em;
   display: block;
