@@ -75,3 +75,7 @@ h1, h2 { line-height: 1 }
   height: 7.5em;
   line-height: 1.1;
 }
+
+.text--uppercase {
+  text-transform: uppercase;
+}
