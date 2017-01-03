@@ -1,6 +1,7 @@
 .scheme--white { background: whitesmoke; color: black }
 .scheme--dark { background: blue; color: whitesmoke }
 .scheme--light { background: gainsboro; color: blue }
+:focus { outline-color: blue }
 
 *, :before, :after { box-sizing: border-box }
 html { font: 1em/2 sans-serif; }
@@ -32,6 +33,10 @@ h1, h2 { line-height: 1 }
   border-radius: .25em;
   padding: .33333em .66666em;
   margin: 0;
+}
+
+.button:focus {
+  text-decoration: underline;
 }
 
 .button:enabled:hover {
