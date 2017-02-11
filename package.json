@@ -50,5 +50,7 @@
     "supernew": true,
     "undef": true,
     "unused": true
-  }
+  },
+  "types": "./index.d.ts",
+  "typings": "./index.d.ts"
 }
