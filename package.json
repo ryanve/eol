@@ -20,6 +20,8 @@
     "ender"
   ],
   "main": "eol.js",
+  "types": "eol.d.ts",
+  "typings": "eol.d.ts",
   "scripts": {
     "lint": "jshint eol.js && jshint test.js",
     "pretest": "npm run lint",
@@ -50,7 +52,5 @@
     "supernew": true,
     "undef": true,
     "unused": true
-  },
-  "types": "./index.d.ts",
-  "typings": "./index.d.ts"
+  }
 }
