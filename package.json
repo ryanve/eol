@@ -1,10 +1,26 @@
 {
   "name": "eol",
   "description": "Newline character converter",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "homepage": "https://github.com/ryanve/eol",
   "license": "MIT",
   "author": "Ryan Van Etten",
+  "main": "eol.js",
+  "types": "eol.d.ts",
+  "typings": "eol.d.ts",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "preversion": "npm test",
+    "pretest": "npm run lint",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanve/eol.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanve/eol/issues"
+  },
   "keywords": [
     "eol",
     "newline",
@@ -18,41 +34,11 @@
     "string",
     "javascript",
     "typescript",
-    "file",
-    "ender"
+    "ender",
+    "file"
   ],
-  "main": "eol.js",
-  "types": "eol.d.ts",
-  "typings": "eol.d.ts",
-  "scripts": {
-    "lint": "jshint eol.js && jshint test.js",
-    "pretest": "npm run lint",
-    "test": "node test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ryanve/eol.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ryanve/eol/issues"
-  },
   "devDependencies": {
     "aok": "^1.9.0",
-    "jshint": "^2.9.3"
-  },
-  "jshintConfig": {
-    "asi": true,
-    "boss": true,
-    "browser": true,
-    "eqnull": true,
-    "expr": true,
-    "latedef": "nofunc",
-    "laxcomma": true,
-    "maxerr": 5,
-    "node": true,
-    "sub": true,
-    "supernew": true,
-    "undef": true,
-    "unused": true
+    "eslint": "^3.15.0"
   }
 }

@@ -1,3 +1,4 @@
+/* global eol */
 $('.js-converter__form').on('submit', function(e) {
   e.preventDefault()
   var $form = $(this)
