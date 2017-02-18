@@ -1,7 +1,7 @@
 # eol
 #### [Newline](http://en.wikipedia.org/wiki/Newline) character converter for JavaScript
 
-```sh
+```
 npm install eol --save
 ```
 
