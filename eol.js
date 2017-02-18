@@ -22,11 +22,16 @@
     }
   }
 
+  function split(text) {
+    return text.split(newline)
+  }
+
   api['lf'] = converts('\n')
   api['cr'] = converts('\r')
   api['crlf'] = converts('\r\n')
   api['auto'] = converts(linebreak)
   api['before'] = before
   api['after'] = after
+  api['split'] = split
   return api
 });

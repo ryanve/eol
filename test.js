@@ -23,6 +23,11 @@
   aok('lf repeat newlines intact', eol.lf('\n\n\r\r') === '\n\n\n\n')
   aok('cr repeat newlines intact', eol.cr('\n\n\r\r') === '\r\r\r\r')
   aok('crlf repeat newlines intact', eol.crlf('\r\n\r\n') === '\r\n\r\n')
+  aok('split return type', eol.split('0\n1\n2') instanceof Array)
+  aok('split lf', eol.split('0\n1\n2').join('') === '012')
+  aok('split cr', eol.split('0\r1\r2').join('') === '012')
+  aok('split crlf', eol.split('0\r\n1\r\n2').join('') === '012')
+  aok('split mixed', eol.split('0\r\n1\n2\r3\r\n4').join('') === '01234')
 
   aok.pass(meths, function(method, i) {
     var normalized = eol[method](sample)
