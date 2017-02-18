@@ -34,6 +34,12 @@ declare module eol {
    * @return string with linebreak added after text
    */
   export function after(text: string): string;
+
+  /**
+   * Split text by newline
+   * @return array of lines
+   */
+  export function split(text: string): Array<string>;
 }
 
 declare module "eol" {

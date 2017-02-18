@@ -35,5 +35,9 @@ var eol = require('eol')
 - Add linebreak after <var>text</var>
 - <b>@return</b> string with linebreak added after text
 
+### `eol.split(text)`
+- Split <var>text</var> by newline
+- <b>@return</b> array of lines
+
 ## License
 MIT
