@@ -23,6 +23,9 @@
   },
   "keywords": [
     "eol",
+    "lf",
+    "cr",
+    "crlf",
     "newline",
     "newlines",
     "convert",
