@@ -1,7 +1,7 @@
 {
   "name": "eol",
   "description": "Newline character converter",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "homepage": "https://github.com/ryanve/eol",
   "license": "MIT",
   "author": "Ryan Van Etten",
