@@ -31,7 +31,7 @@
   aok('joins strings by lf', eol.lf(['a','b','c']) === 'a\nb\nc')
   aok('joins strings by cr', eol.cr(['a','b','c']) === 'a\rb\rc')
   aok('joins strings by crlf', eol.crlf(['a','b','c']) === 'a\r\nb\r\nc')
-  aok('joins strings', eol.auto(['a','b','c']) === isWindows ? 'a\r\nb\r\nc' : 'a\nb\nc' )
+  aok('joins strings', eol.auto(['a','b','c']) === isWindows ? 'a\r\nb\r\nc' : 'a\nb\nc')
 
   aok.pass(meths, function(method, i) {
     var normalized = eol[method](sample)

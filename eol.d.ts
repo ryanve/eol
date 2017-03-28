@@ -3,25 +3,25 @@ declare module eol {
    * Normalize line endings in text for the current operating system
    * @return string with line endings normalized to \r\n or \n
    */
-  export function auto(text: string): string;
+  export function auto(text: string|string[]): string;
 
   /**
    * Normalize line endings in text to CRLF (Windows, DOS)
    * @return string with line endings normalized to \r\n
    */
-  export function crlf(text: string): string;
+  export function crlf(text: string|string[]): string;
 
   /**
    * Normalize line endings in text to LF (Unix, OS X)
    * @return string with line endings normalized to \n
    */
-  export function lf(text: string): string;
+  export function lf(text: string|string[]): string;
 
   /**
    * Normalize line endings in text to CR (Mac OS)
    * @return string with line endings normalized to \r
    */
-  export function cr(text: string): string;
+  export function cr(text: string|string[]): string;
 
   /**
    * Add linebreak before text
