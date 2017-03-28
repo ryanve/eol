@@ -14,18 +14,22 @@ var eol = require('eol')
 ### `eol.auto(text)`
 - Normalize line endings in <var>text</var> for the current operating system
 - <b>@return</b> string with line endings normalized to `\r\n` or `\n`
+- If <var>text</var> is an array, join with `\r\n` or `\n`
 
 ### `eol.crlf(text)`
 - Normalize line endings in <var>text</var> to <b>CRLF</b> (Windows, DOS)
 - <b>@return</b> string with line endings normalized to `\r\n`
+- If <var>text</var> is an array, join with `\r\n`
 
 ### `eol.lf(text)`
 - Normalize line endings in <var>text</var> to <b>LF</b> (Unix, OS X)
 - <b>@return</b> string with line endings normalized to `\n`
+- If <var>text</var> is an array, join with `\n`
 
 ### `eol.cr(text)`
 - Normalize line endings in <var>text</var> to <b>CR</b> (Mac OS)
 - <b>@return</b> string with line endings normalized to `\r`
+- If <var>text</var> is an array, join with `\r`
 
 ### `eol.before(text)`
 - Add linebreak before <var>text</var>
