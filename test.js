@@ -28,6 +28,14 @@
   aok('split cr', eol.split('0\r1\r2').join('') === '012')
   aok('split crlf', eol.split('0\r\n1\r\n2').join('') === '012')
   aok('split mixed', eol.split('0\r\n1\n2\r3\r\n4').join('') === '01234')
+  aok('joins strings by lf', eol.lf(['a','b','c']) === 'a\nb\nc')
+  aok('joins strings by cr', eol.cr(['a','b','c']) === 'a\rb\rc')
+  aok('joins strings by crlf', eol.crlf(['a','b','c']) === 'a\r\nb\r\nc')
+  aok('joins strings', eol.auto(['a','b','c']) === isWindows ? 'a\r\nb\r\nc' : 'a\nb\nc')
+  aok('lf function coerces to string', 'x' + eol.lf === 'x\n')
+  aok('crlf function coerces to string', 'x' + eol.crlf === 'x\r\n')
+  aok('cr function coerces to string', 'x' + eol.cr === 'x\r')
+  aok('auto function coerces to string', 'x' + eol.auto === isWindows ? 'x\r\n' : 'x\n')
 
   aok.pass(meths, function(method, i) {
     var normalized = eol[method](sample)
