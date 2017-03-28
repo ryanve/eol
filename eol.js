@@ -17,7 +17,7 @@
   }
 
   function converts(to) {
-    return function(text) {
+    var f = function(text) {
       if (Array.isArray(text)) {
         return text.map(function(text) {
           return text.replace(newline, to)
@@ -25,6 +25,10 @@
       }
       return text.replace(newline, to)
     }
+    f.toString = function() {
+      return to
+    }
+    return f
   }
 
   function split(text) {

@@ -32,6 +32,10 @@
   aok('joins strings by cr', eol.cr(['a','b','c']) === 'a\rb\rc')
   aok('joins strings by crlf', eol.crlf(['a','b','c']) === 'a\r\nb\r\nc')
   aok('joins strings', eol.auto(['a','b','c']) === isWindows ? 'a\r\nb\r\nc' : 'a\nb\nc')
+  aok('lf function coerces to string', 'x' + eol.lf === 'x\n')
+  aok('crlf function coerces to string', 'x' + eol.crlf === 'x\r\n')
+  aok('cr function coerces to string', 'x' + eol.cr === 'x\r')
+  aok('auto function coerces to string', 'x' + eol.auto === isWindows ? 'x\r\n' : 'x\n')
 
   aok.pass(meths, function(method, i) {
     var normalized = eol[method](sample)
