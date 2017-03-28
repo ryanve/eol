@@ -18,6 +18,11 @@
 
   function converts(to) {
     return function(text) {
+      if (Array.isArray(text)) {
+        return text.map(function(text) {
+          return text.replace(newline, to)
+        }).join(to)
+      }
       return text.replace(newline, to)
     }
   }
