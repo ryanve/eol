@@ -1,12 +1,18 @@
 # eol
-#### [Newline](http://en.wikipedia.org/wiki/Newline) character converter for JavaScript
+[Newline](http://en.wikipedia.org/wiki/Newline) character converter for JavaScript. Available [on npm](https://www.npmjs.com/package/eol).
 
 ```
 npm install eol --save
 ```
 
+### `require` or `import`
+
 ```js
-var eol = require('eol')
+const eol = require('eol')
+```
+
+```js
+import eol from 'eol'
 ```
 
 ## API
