@@ -36,6 +36,7 @@
   aok('split cr', eol.split('0\r1\r2').join('') === '012')
   aok('split crlf', eol.split('0\r\n1\r\n2').join('') === '012')
   aok('split mixed', eol.split('0\r\n1\n2\r3\r\n4').join('') === '01234')
+  aok('split join', eol.split('0\n1\n\n2\n').join(eol.auto) === eol.auto('0\n1\n\n2\n'))
   aok('split filter join', eol.split('A\n\nB').filter(identity).join(eol.lf) === 'A\nB')
   aok('split slice join', eol.split('A\nB\nC\nD').slice(-2).join(eol.lf) === 'C\nD')
 
