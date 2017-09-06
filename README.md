@@ -39,5 +39,16 @@ var eol = require('eol')
 - Split <var>text</var> by newline
 - <b>@return</b> array of lines
 
+### Joining
+
+Coercing `eol.auto`|`eol.crlf`|`eol.lf`|`eol.cr` to string yields the appropriate character. This is useful for joining.
+
+```js
+String(eol.lf) // "\n"
+eol.split(text).join(eol.auto) // same as eol.auto(text)
+eol.split(text).filter(line => line).join(eol.auto) // text joined after removing empty lines
+eol.split(text).slice(-3).join(eol.auto) // last 3 lines joined
+```
+
 ## License
 MIT
