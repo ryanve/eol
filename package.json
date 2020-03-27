@@ -3,6 +3,7 @@
   "description": "Newline character converter",
   "version": "0.9.1",
   "homepage": "https://github.com/ryanve/eol",
+  "funding": "https://github.com/sponsors/ryanve",
   "license": "MIT",
   "author": "Ryan Van Etten",
   "main": "eol.js",
