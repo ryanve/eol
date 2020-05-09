@@ -58,7 +58,7 @@ eol.split(text).slice(-3).join(eol.auto) // last 3 lines joined
 
 ## Elsewhere in space
 
-[`ssv`](https://github.com/ryanve/ssv)
+[`ssv`](https://ryanve.github.io/ssv/)
 
 ## License
 MIT
