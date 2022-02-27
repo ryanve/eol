@@ -37,5 +37,6 @@
   api['before'] = before
   api['after'] = after
   api['split'] = split
+  api['dub'] = dub
   return api
 });
