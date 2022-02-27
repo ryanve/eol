@@ -33,6 +33,12 @@ import eol from 'eol'
 - Normalize line endings in <var>text</var> to <b>CR</b> (Mac OS)
 - <b>@return</b> string with line endings normalized to `\r`
 
+### `eol.dub(text)`
+
+- Dubnormalize. [Available for mixins.](#mixins)
+- Create function to convert linebreaks *to* <var>text</var>
+- <b>@return</b> anonymous function
+
 ### `eol.before(text)`
 - Add linebreak before <var>text</var>
 - <b>@return</b> string with linebreak added before text
@@ -56,9 +62,16 @@ eol.split(text).filter(line => line).join(eol.auto) // text joined after removin
 eol.split(text).slice(-3).join(eol.auto) // last 3 lines joined
 ```
 
-## Elsewhere in space
+### Mixins
 
-[`ssv`](https://ryanve.github.io/ssv/)
+```
+let lflf = eol.dub("\n\n")
+lflf("...")
+```
 
-## License
-MIT
+[<kbd><b>got space</b>?</kbd>](https://github.com/ryanve/ssv)
+
+
+## [opensource](package.json)
+
+[`MIT License`](LICENSE.md)
