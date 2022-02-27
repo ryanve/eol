@@ -23,7 +23,7 @@
     change.toString = function() {
       return to
     }
-    return convert
+    return change
   }
 
   function split(text) {
