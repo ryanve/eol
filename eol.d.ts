@@ -24,6 +24,13 @@ declare module eol {
   export function cr(text: string): string;
 
   /**
+   * Dubnormalize. Used internally. Mixin friendly.
+   * Create normalizer where linebreaks become your desire.
+   * @return anonymous function
+   */
+  export function dub(text: string): (text: string) => string;
+
+  /**
    * Add linebreak before text
    * @return string with linebreak added before text
    */

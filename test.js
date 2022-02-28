@@ -19,6 +19,8 @@
     throw new Error('FAILED TEST: ' + this.id)
   }
 
+  aok('dub method', typeof eol.dub == 'function')
+  aok('dub return', typeof eol.dub() == 'function')
   aok('contains sees contained text', contains('ab', 'a') === true)
   aok('sample contains newlines', contains(sample, '\n') && contains(sample, '\r'))
   aok('returns other strings as is', eol.auto('random') === 'random')

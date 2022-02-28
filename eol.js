@@ -16,26 +16,27 @@
     return text + linebreak
   }
 
-  function converts(to) {
-    function convert(text) {
+  function dub(to) {
+    function change(text) {
       return text.replace(newline, to)
     }
-    convert.toString = function() {
+    change.toString = function() {
       return to
     }
-    return convert 
+    return change
   }
 
   function split(text) {
     return text.split(newline)
   }
 
-  api['lf'] = converts('\n')
-  api['cr'] = converts('\r')
-  api['crlf'] = converts('\r\n')
-  api['auto'] = converts(linebreak)
+  api['lf'] = dub('\n')
+  api['cr'] = dub('\r')
+  api['crlf'] = dub('\r\n')
+  api['auto'] = dub(linebreak)
   api['before'] = before
   api['after'] = after
   api['split'] = split
+  api['dub'] = dub
   return api
 });
