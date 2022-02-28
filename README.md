@@ -35,9 +35,9 @@ import eol from 'eol'
 
 ### `eol.dub(text)`
 
-- Dubnormalize. [Available for mixins.](#mixins)
-- Create function to convert linebreaks *to* <var>text</var>
-- <b>@return</b> anonymous function
+- [Dubnormalize.](https://github.com/ryanve/eol/pull/32) [Used internally.](eol.js) [Generative.](#dubbing)
+- Create normalizer where linebreaks become <var>text</var>
+- <b>@return</b> composed function
 
 ### `eol.before(text)`
 - Add linebreak before <var>text</var>
@@ -62,7 +62,7 @@ eol.split(text).filter(line => line).join(eol.auto) // text joined after removin
 eol.split(text).slice(-3).join(eol.auto) // last 3 lines joined
 ```
 
-### Mixins
+### Dubbing
 
 ```
 let lflf = eol.dub("\n\n")
