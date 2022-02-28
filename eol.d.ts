@@ -25,7 +25,7 @@ declare module eol {
 
   /**
    * Dubnormalize. Used internally. Mixin friendly.
-   * Create normalizer to desired replacement text.
+   * Create normalizer where linebreaks become your desire.
    * @return anonymous function
    */
   export function dub(text: string): (text: string) => string;
