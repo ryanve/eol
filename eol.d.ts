@@ -43,6 +43,12 @@ declare module eol {
   export function after(text: string): string;
 
   /**
+   * Detect or inspect linebreaks
+   * @return array of matched linebreaks
+   */
+  export function match(text: string): Array<string>;
+
+  /**
    * Split text by newline
    * @return array of lines
    */

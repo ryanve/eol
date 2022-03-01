@@ -47,6 +47,10 @@ import eol from 'eol'
 - Add linebreak after <var>text</var>
 - <b>@return</b> string with linebreak added after text
 
+### `eol.match(text)`
+- Detect or inspect linebreaks in <var>text</var>
+- <b>@return</b> array of matched linebreaks
+
 ### `eol.split(text)`
 - Split <var>text</var> by newline
 - <b>@return</b> array of lines
@@ -62,7 +66,18 @@ eol.split(text).filter(line => line).join(eol.auto) // text joined after removin
 eol.split(text).slice(-3).join(eol.auto) // last 3 lines joined
 ```
 
+### Matching
+
+Detect or inspect via match
+
+```js
+eol.match(' ') // []
+eol.match('world\nwide\nweb') // ['\n','\n']
+```
+
 ### Dubbing
+
+Mixin friendly
 
 ```
 let lflf = eol.dub("\n\n")

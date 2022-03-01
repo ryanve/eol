@@ -26,6 +26,10 @@
     return change
   }
 
+  function match(text) {
+    return text.match(newline) || []
+  }
+
   function split(text) {
     return text.split(newline)
   }
@@ -36,6 +40,7 @@
   api['auto'] = dub(linebreak)
   api['before'] = before
   api['after'] = after
+  api['match'] = match
   api['split'] = split
   api['dub'] = dub
   return api
