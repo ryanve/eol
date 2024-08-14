@@ -1,81 +1,133 @@
-.scheme--white { background: whitesmoke; color: black }
-.scheme--dark { background: blue; color: whitesmoke }
-.scheme--light { background: gainsboro; color: blue }
-:focus { outline-color: blue }
+/*
+iffy◒
+s9a.page/iffy color typhoon
+webmural.com/iffy thxyz hue
+*/
+.iyff {filter:hue-rotate(-288deg)}
+.ffiy {filter:hue-rotate(288deg)}
+.ffyi {filter:hue-rotate(144deg)}
+.yiff {filter:hue-rotate(-144deg)}
+.iffy {fill:var(--iffy);stroke:var(--yffi)}
+.yffi {fill:var(--yffi);stroke:var(--iffy)}
+.iffy.iffy {background-color:var(--iffy);color:var(--yffi)}
+.yffi.yffi {background-color:var(--yffi);color:var(--iffy)}
+.iffy ::selection {color:var(--iffy);background:var(--else)}
+.yffi ::selection {color:var(--yffi);background:var(--else)}
+.iffy *{background-color:transparent;color:unset;--else:aquamarine}
+.yffi *{background-color:transparent;color:unset;--else:dodgerblue}
+*{--iffy:darkviolet;--yffi:lemonchiffon}
+@media (prefers-color-scheme:dark){*{--yffi:khaki}}
+@media (prefers-contrast:more){*{--iffy:indigo}}
+@media (prefers-contrast:less){*{--yffi:peachpuff}}
 
-*, :before, :after { box-sizing: border-box }
-html { font: 1em/2 sans-serif; }
-body { width: 100%; margin: auto; padding: 1em }
-a { text-decoration: none }
-a:hover { text-decoration: underline }
-textarea, select { font: inherit }
-textarea { max-width: 100%; margin: 0 }
-header, section { display: block }
+/*
+play
+*/
+
+:focus { 
+  box-shadow: 0 0 1ch 1ch var(--yffi, yellow);
+  outline: thick dotted purple;
+}
+
+* { box-sizing: border-box }
+
+html { 
+  font-family: sans-serif;
+  font-size: max(1em, 1.11vmax);
+  line-height: 1.618;
+}
+
+body { 
+  width: 100%;
+  margin: auto; padding: 1em;
+}
+
+section { 
+  display: block;
+}
+
 fieldset { padding: 0; border: 0 }
-label { margin: 0; padding: 0 }
-h1, h2 { line-height: 1 }
 
-.border-radius {
+label { margin: 0; padding: 0 }
+
+.curve {
   border-radius: .25em;
 }
 
-.inherit-size {
-  font-size: inherit;
-}
-
-.button {
-  font-size: inherit;
-  font-style: inherit;
+.bttn {
+  font: inherit;
   font-weight: bold;
   min-height: 2.5em;
   display: inline-block;
   border: 0;
-  border-radius: .25em;
-  padding: .33333em .66666em;
+  border-radius: 1ch;
+  padding: .382em .618em;
+  text-decoration: .236em solid underline;
   margin: 0;
 }
 
-.button:focus {
-  text-decoration: underline;
+.bttn:focus {
+  text-decoration-style: dotted;
 }
 
-.button:enabled:hover {
-  cursor: pointer;
-  text-decoration: underline;
+select {
+  display: inline-block;
+  text-transform: uppercase;
 }
 
-.m-b-1 {
-  margin-bottom: .5em;
+option {
+  text-transform: uppercase;
 }
 
-.m-b-2 {
-  margin-bottom: 1em;
-}
-
-.m-b-3 {
+header {
   margin-bottom: 2em;
 }
 
-.inline-block {
-  display: inline-block;
+h1 {
+  font-size: 2em;
+  font-weight: unset;
+  margin-bottom: 1ch;
 }
 
-.block {
-  display: block;
+h2 {
+  font-size: 1.236em;
 }
 
-.area {
-  white-space: pre-wrap;
-  border: 2px solid gainsboro;
-  padding: .25em;
+dfn,
+cite {
+  font-style: unset;
+  font-weight: bold;
+}
+
+span {
+  font-weight: normal;
+}
+
+fieldset {
+  margin-bottom: 2em;
+}
+
+.mb1 { margin-bottom: 1ch }
+.mb2 { margin-bottom: 1em }
+.mb3 { margin-bottom: 2em }
+
+label {
   display: block;
-  overflow: auto;
-  resize: vertical;
-  width: 100%;
+  margin-bottom: 1em;
+}
+
+.supernova {
+  box-sizing: border-box;
+  border: medium solid;
+  border-radius: 1ch;
+  display: block;
+  font: inherit;
   height: 7.5em;
-  line-height: 1.1;
-}
-
-.text--uppercase {
-  text-transform: uppercase;
+  margin: 0 0 1em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1ch;
+  resize: vertical;
+  white-space: pre-wrap;
+  width: 100%;
 }

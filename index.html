@@ -1,38 +1,100 @@
 <!DOCTYPE html>
-<html lang="en-US" class="scheme--white">
+<html lang="en-US" class="iffy">
 <meta charset="utf-8">
-<title>EOL converter</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Newline character converter">
+
+<title>EOL opensource library</title>
+
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Newline converter">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="darkviolet">
+
+<link rel="help" href="https://github.com/ryanve/eol#readme">
+<link rel="help" href="https://en.wikipedia.org/wiki/Newline">
+
+<link rel="help" href="https://s9a.page/iffy">
+<style media=(color)>
+  .iyff {filter:hue-rotate(-288deg)}
+  .ffiy {filter:hue-rotate(288deg)}
+  .ffyi {filter:hue-rotate(144deg)}
+  .yiff {filter:hue-rotate(-144deg)}
+  .iffy {fill:var(--iffy);stroke:var(--yffi)}
+  .yffi {fill:var(--yffi);stroke:var(--iffy)}
+  .iffy.iffy {background-color:var(--iffy);color:var(--yffi)}
+  .yffi.yffi {background-color:var(--yffi);color:var(--iffy)}
+  .iffy ::selection {color:var(--iffy);background:var(--else)}
+  .yffi ::selection {color:var(--yffi);background:var(--else)}
+  .iffy *{background-color:transparent;color:unset;--else:aquamarine}
+  .yffi *{background-color:transparent;color:unset;--else:dodgerblue}
+  *{--iffy:darkviolet;--yffi:lemonchiffon}
+  @media (prefers-color-scheme:dark){*{--yffi:khaki}}
+  @media (prefers-contrast:more){*{--iffy:indigo}}
+  @media (prefers-contrast:less){*{--yffi:peachpuff}}
+</style>
+
 <link rel="stylesheet" href="style.css">
 
-<header class="m-b-3">
-  <h1 class="m-b-1">eol converter</h1>
-  <a class="button scheme--light" href="https://github.com/ryanve/eol">Github</a>
-  <a class="button scheme--light" href="https://www.npmjs.com/package/eol">npm</a>
+<header>
+  <h1>
+    <cite>eol</cite>
+    <a>opensource</a>
+    <a href="https://en.wikipedia.org/wiki/Newline">newline</a>
+    <a>conversion</a>
+  </h1>
+  <span>
+
+  </span>
+  <nav aria-label="opensource">
+    <a class="bttn yffi ffyi" href="https://github.com/ryanve/eol">github</a>
+    <a class="bttn yffi ffiy" href="https://www.npmjs.com/package/eol">npm</a>
+  </nav>
+  <p>
+    <code>eol</code> is an opensource  
+    <a href="https://en.wikipedia.org/wiki/Newline">newline</a>
+    conversion node module.
+  </p>
+  <p>
+    <dfn>EOL</dfn>
+    
+  </p>
+  <dl>
+    <dt>EOL
+    <dd>end of line
+    <dd>line feed
+    <dd>newline
+  </dl>
 </header>
 
-<form class="js-converter__form">
-  <fieldset class="m-b-2">
-    <label class="block m-b-2">
-      <b>Input</b>
-      <textarea class="area border-radius scheme--white js-converter__input"></textarea>
+<form id="morf" >
+  <fieldset>
+    <label>
+      <b>sample</b>
+      <textarea name="paste" class="supernova">hello\r\nhello\r\nhello\r\nhello</textarea>
     </label>
-    <button type="submit" class="button scheme--dark">Convert line endings to</button>
-    <label class="inline-block m-b-2">
-      <select class="button scheme--light text--uppercase js-converter__method" aria-label="Convert to">
-        <option selected>lf</option>
-        <option>crlf</option>
-        <option>cr</option>
-      </select>
+    <button name="convert" class="bttn yffi ffyi">become</button>
+    <select name="method" class="bttn yffi" aria-label="newline type">
+      <option value="LF">LF</option>
+      <option value="CRLF">CRLF</option>
+      <option value="CR">CR</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <label>
+      <b>output</b>
+      <output name="output" class="supernova" contenteditable></output>
     </label>
   </fieldset>
-  <section>
-    <h2 class="inherit-size">Output</h2>
-    <div class="area scheme--white border-radius js-converter__output" contenteditable></div>
-  </section>
 </form>
 
+<footer>
+  <h2>thank you!</h2>
+  <dl>
+    <dt>color
+    <dd><a class="bttn yffi ffiy" href="https://s9a.page/iffy">iffy</a>
+    <dt>space sister <a class="bttn yffi ffiy" href="https://ryanve.dev/ssv">ssv</a>
+    <dd>
+  </dl>
+</footer>
+
 <script src="eol.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
 <script src="ui.js"></script>
