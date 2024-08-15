@@ -5,7 +5,7 @@
 <title>EOL opensource library</title>
 
 <meta name="viewport" content="width=device-width">
-<meta name="description" content="Newline converter">
+<meta name="description" content="JavaScript newline conversion library">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="darkviolet">
 
@@ -34,67 +34,99 @@
 
 <link rel="stylesheet" href="style.css">
 
-<header>
+<header class="iffy" id="hi">
   <h1>
     <cite>eol</cite>
-    <a>opensource</a>
-    <a href="https://en.wikipedia.org/wiki/Newline">newline</a>
-    <a>conversion</a>
+    opensource
+    newline
+    conversion
   </h1>
-  <span>
-
-  </span>
   <nav aria-label="opensource">
     <a class="bttn yffi ffyi" href="https://github.com/ryanve/eol">github</a>
     <a class="bttn yffi ffiy" href="https://www.npmjs.com/package/eol">npm</a>
   </nav>
   <p>
-    <code>eol</code> is an opensource  
-    <a href="https://en.wikipedia.org/wiki/Newline">newline</a>
-    conversion node module.
+    <code>eol</code> is an opensource
+    <a class="ffyi" href="https://en.wikipedia.org/wiki/Newline">newline</a>
+    conversion <code>node</code> module.
+    <code>eol</code> helps you smoothly convert <i>line endings</i>
+    in <a class="ffyi" href="https://nodejs.org">node</a> applications.
+    <code>eol</code> is written in JavaScript and supports TypeScript too.
+    The words <i>newline</i>, <i>linebreak</i>, <i>line ending</i>
+    are used interchangeably here. 
+    They mark an <i>end of line</i>.
+    Feel free to play with <code>eol</code>
+    in the console on this page for learning purposes.
   </p>
-  <p>
-    <dfn>EOL</dfn>
-    
-  </p>
-  <dl>
-    <dt>EOL
-    <dd>end of line
-    <dd>line feed
-    <dd>newline
-  </dl>
 </header>
 
-<form id="morf" >
-  <fieldset>
-    <label>
-      <b>sample</b>
-      <textarea name="paste" class="supernova">hello\r\nhello\r\nhello\r\nhello</textarea>
-    </label>
-    <button name="convert" class="bttn yffi ffyi">become</button>
-    <select name="method" class="bttn yffi" aria-label="newline type">
-      <option value="LF">LF</option>
-      <option value="CRLF">CRLF</option>
-      <option value="CR">CR</option>
-    </select>
-  </fieldset>
-  <fieldset>
-    <label>
-      <b>output</b>
-      <output name="output" class="supernova" contenteditable></output>
-    </label>
-  </fieldset>
-</form>
-
-<footer>
-  <h2>thank you!</h2>
+<section class="yffi" id="methods">
+  <h2>methods</h2>
   <dl>
-    <dt>color
-    <dd><a class="bttn yffi ffiy" href="https://s9a.page/iffy">iffy</a>
-    <dt>space sister <a class="bttn yffi ffiy" href="https://ryanve.dev/ssv">ssv</a>
-    <dd>
+    <dt><code>eol.auto(<var>text</var>)</code>
+    <dd>Normalize <var>text</var> to match the current operating system
+    <dd>Returns string with <i>line endings</i> normalized accordingly
+    <dt><code>eol.crlf(<var>text</var>)</code>
+    <dd>Normalize <i>line endings</i> in <var>text</var> to CRLF (Windows, DOS)
+    <dd>Returns string normalized to <q>\r\n</q> <i>line endings</i>
+    <dt><code>eol.lf(<var>text</var>)</code>
+    <dd>Normalize <i>line endings</i> in <var>text</var> to LF (Unix, OS X)
+    <dd>Returns string normalized to <q>\n</q> <i>line endings</i>
+    <dt><code>eol.cr(<var>text</var>)</code>
+    <dd>Normalize <i>line endings</i> in <var>text</var> to CR (Mac OS)
+    <dd>Returns string normalized to <q>\r</q> <i>line endings</i>
+    <dt><code>eol.dub(<var>text</var>)</code>
+    <dd>Generate normalizer that replaces <i>line endings</i> with <var>text</var>
+    <dd>Returns composed function like above
+    <dd>Usable as glue to join arrays
+    <dt><code>eol.before(<var>text</var>)</code>
+    <dd>Add <i>linebreak</i> before <var>text</var>
+    <dd>Returns string with <i>linebreak</i> added <em>before</em> <var>text</var>
+    <dt><code>eol.after(<var>text</var>)</code>
+    <dd>Add <i>linebreak</i> after <var>text</var>
+    <dd>Returns string with <i>linebreak</i> added <em>after</em> <var>text</var>
+    <dt><code>eol.match(<var>text</var>)</code>
+    <dd>Detect or inspect <i>linebreaks</i> in <var>text</var>
+    <dd>Returns array of matched <i>linebreaks</i>
+    <dt><code>eol.split(<var>text</var>)</code>
+    <dd>Split <var>text</var> by <i>newline</i>
+    <dd>Returns array of lines
   </dl>
+</section>
+
+<section class="yffi yiff" id="samples">
+  <h2>samples</h2>
+  <h3>normalizing</h3>
+  <pre>eol.lf("hello<b>\r\n</b>world<b>\r\n</b>")<br>// "hello<b>\n</b>world<b>\n</b>"</pre>
+  <h3>remove empty lines</h3>
+  <pre>eol.split(text).filter(line => line).join(eol.lf)</pre>
+  <h3>detect or inspect</h3>
+  <pre>eol.match("hello<b>\n</b>world<b>\n</b>")<br>// ["\n","\n"]</pre>
+  <h3>coercion</h3>
+  <pre>String(eol.lf) // "\n"</pre>
+  <pre>String(eol.cr) // "\r"</pre>
+  <pre>String(eol.crlf) // "\r\n"</pre>
+  <h3>generating normalizers</h3>
+  <pre>let lflf = eol.dub("\n\n")<br>lflf("hello<b>\n</b>world<b>\n</b>")<br>// "hello<b>\n\n</b>world<b>\n\n</b>"</pre>
+</section>
+
+<footer class="iffy ffiy" id="thankyou">
+  <h2>thank you</h2>
+  <p>
+    Thank you for being part of the opensource community.
+    Hope you enjoy using <code>eol</code>
+  </p>
+  <p>
+    <a class="ffyi" href="https://github.com/ryanve/eol">All the code is on github</a>
+    where <a class="ffyi" href="https://github.com/sponsors/ryanve">you may sponsor its creator if you like</a>
+  </p>
+  <p>
+    Color here uses the <a class="ffiy" href="https://s9a.page/iffy">iffy opensource library</a>.
+    If you enjoy space <a class="ffiy" href="https://ryanve.dev/ssv">you may also enjoy ssv</a>
+  </p>
+  <p>
+    <a class="yffi" href="#hi">=p</a>
+  </p>
 </footer>
 
 <script src="eol.js"></script>
-<script src="ui.js"></script>
