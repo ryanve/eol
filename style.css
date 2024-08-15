@@ -17,6 +17,13 @@ html {
   line-height: 1.618;
 }
 
+pre {
+  font-family: monospace;
+  font-size: 0.666rem;
+  margin: 0;
+  white-space: pre-line;
+}
+
 body {
   display: flex;
   flex-flow: column;
@@ -36,41 +43,30 @@ nav a {
   padding: .5ch;
 }
 
- {
-  padding: .5ch;
-}
-
-header {
-  margin-bottom: 2em;
-}
-
-pre {
+q {
   font-family: monospace;
-  white-space: pre-line;
+  quotes: '"' '"';
 }
 
 p {
   max-width: 26em;
+  margin-block: 3ch;
   margin-inline: auto;
 }
 
 dt {
-  font-size: 1.236rem;
-  margin-block: 1em 0;
+  font-size: 1.146rem;
+  margin-block: 3ch 0;
 }
 
-dd {
+dd { 
   margin-block: 0;
 }
 
-pre {
-  font-size: 0.666rem;
-  margin: 0;
-}
-
-q {
-  font-family: monospace;
-  quotes: '"' '"';
+@media (orientation: portrait) {
+  dd { 
+    margin-block: 1ch;
+  }
 }
 
 h1 {
@@ -83,7 +79,6 @@ h2 {
   font-size: 1.382em;
 }
 
-dfn,
 cite {
   font-style: unset;
   font-weight: bold;
