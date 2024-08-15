@@ -1,81 +1,90 @@
-.scheme--white { background: whitesmoke; color: black }
-.scheme--dark { background: blue; color: whitesmoke }
-.scheme--light { background: gainsboro; color: blue }
-:focus { outline-color: blue }
-
-*, :before, :after { box-sizing: border-box }
-html { font: 1em/2 sans-serif; }
-body { width: 100%; margin: auto; padding: 1em }
-a { text-decoration: none }
-a:hover { text-decoration: underline }
-textarea, select { font: inherit }
-textarea { max-width: 100%; margin: 0 }
-header, section { display: block }
-fieldset { padding: 0; border: 0 }
-label { margin: 0; padding: 0 }
-h1, h2 { line-height: 1 }
-
-.border-radius {
-  border-radius: .25em;
+:focus {
+  box-shadow: 0 0 1ch 1ch var(--yffi, currentColor);
+  outline: thick dotted var(--iffy, currentColor);
 }
 
-.inherit-size {
-  font-size: inherit;
+:any-link:hover {
+  text-decoration-style: double;
 }
 
-.button {
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: bold;
-  min-height: 2.5em;
-  display: inline-block;
-  border: 0;
-  border-radius: .25em;
-  padding: .33333em .66666em;
-  margin: 0;
+* {
+  box-sizing: border-box;
 }
 
-.button:focus {
-  text-decoration: underline;
+html { 
+  font-family: sans-serif;
+  font-size: max(3ch, 2vw + 1vh);
+  line-height: 1.618;
 }
 
-.button:enabled:hover {
-  cursor: pointer;
-  text-decoration: underline;
+body {
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  overflow-wrap: anywhere;
 }
 
-.m-b-1 {
-  margin-bottom: .5em;
+body > * {
+  contain: layout;
+  padding: 1em;
+  padding-block: calc(1em + 1vh);
+  padding-inline: calc(1em + 1vw);
 }
 
-.m-b-2 {
-  margin-bottom: 1em;
+a:only-child,
+nav a {
+  padding: .5ch;
 }
 
-.m-b-3 {
+ {
+  padding: .5ch;
+}
+
+header {
   margin-bottom: 2em;
 }
 
-.inline-block {
-  display: inline-block;
+pre {
+  font-family: monospace;
+  white-space: pre-line;
 }
 
-.block {
-  display: block;
+p {
+  max-width: 26em;
+  margin-inline: auto;
 }
 
-.area {
-  white-space: pre-wrap;
-  border: 2px solid gainsboro;
-  padding: .25em;
-  display: block;
-  overflow: auto;
-  resize: vertical;
-  width: 100%;
-  height: 7.5em;
-  line-height: 1.1;
+dt {
+  font-size: 1.236rem;
+  margin-block: 1em 0;
 }
 
-.text--uppercase {
-  text-transform: uppercase;
+dd {
+  margin-block: 0;
+}
+
+pre {
+  font-size: 0.666rem;
+  margin: 0;
+}
+
+q {
+  font-family: monospace;
+  quotes: '"' '"';
+}
+
+h1 {
+  font-size: 1.618em;
+  font-weight: unset;
+  margin-bottom: 1ch;
+}
+
+h2 {
+  font-size: 1.382em;
+}
+
+dfn,
+cite {
+  font-style: unset;
+  font-weight: bold;
 }
