@@ -37,23 +37,23 @@ import eol from 'eol'
 
 - [Dubnormalize.](https://github.com/ryanve/eol/pull/32) [Used internally.](eol.js) [Generative.](#dubbing)
 - Create normalizer where linebreaks become <var>text</var>
-- <b>@return</b> composed function
+- Returns composed function
 
 ### `eol.before(text)`
 - Add linebreak before <var>text</var>
-- <b>@return</b> string with linebreak added before text
+- Returns string with linebreak added before text
 
 ### `eol.after(text)`
 - Add linebreak after <var>text</var>
-- <b>@return</b> string with linebreak added after text
+- Returns string with linebreak added after text
 
 ### `eol.match(text)`
 - Detect or inspect linebreaks in <var>text</var>
-- <b>@return</b> array of matched linebreaks
+- Returns array of matched linebreaks
 
 ### `eol.split(text)`
 - Split <var>text</var> by newline
-- <b>@return</b> array of lines
+- Returns array of lines
 
 ### Joining
 
