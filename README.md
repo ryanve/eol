@@ -8,11 +8,11 @@ npm install eol --save
 ### `require` or `import`
 
 ```js
-const eol = require('eol')
+const eol = require("eol")
 ```
 
 ```js
-import eol from 'eol'
+import eol from "eol"
 ```
 
 ## API
@@ -71,8 +71,8 @@ eol.split(text).slice(-3).join(eol.auto) // last 3 lines joined
 Detect or inspect via match
 
 ```js
-eol.match(' ') // []
-eol.match('world\nwide\nweb') // ['\n','\n']
+eol.match(" ") // []
+eol.match("world\nwide\nweb") // ["\n","\n"]
 ```
 
 ### Dubbing
