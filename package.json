@@ -10,7 +10,7 @@
   "types": "eol.d.ts",
   "typings": "eol.d.ts",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "npx eslint",
     "preversion": "npm test",
     "pretest": "npm run lint",
     "test": "node test.js"
