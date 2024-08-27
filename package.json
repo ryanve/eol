@@ -10,7 +10,7 @@
   "types": "eol.d.ts",
   "typings": "eol.d.ts",
   "scripts": {
-    "lint": "eslint . --ext .js",
+    "lint": "npx eslint",
     "preversion": "npm test",
     "pretest": "npm run lint",
     "test": "node test.js"
@@ -43,6 +43,6 @@
   ],
   "devDependencies": {
     "aok": "^1.9.0",
-    "eslint": "^6.8.0"
+    "eslint": "^9.9.1"
   }
 }
