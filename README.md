@@ -1,67 +1,72 @@
-# eol
-[Newline](http://en.wikipedia.org/wiki/Newline) character converter for JavaScript. Available [on npm](https://www.npmjs.com/package/eol).
+# [eol](https://ryanve.github.io/eol)
 
-```
-npm install eol --save
-```
+[Newline](http://en.wikipedia.org/wiki/Newline) character converter node module for [JavaScript](eol.js) or [TypeScript](eol.d.ts)
 
-### `require` or `import`
+### [npm.im/eol](https://npmjs.com/package/eol)
 
-```js
-const eol = require("eol")
-```
+* `npm install eol`
+* <code><b>let</b> eol = <b>require</b>("eol")</code>
+* <code><b>import</b> eol <b>from</b> "eol"</code>
 
-```js
-import eol from "eol"
-```
+## [API](https://ryanve.github.io/eol#methods)
 
-## API
+### eol.auto(<var>text</var>)
 
-### `eol.auto(text)`
 * Normalize line endings in <var>text</var> to match the current operating system
 * Returns string with line endings normalized to `\r\n` or `\n`
 
-### `eol.crlf(text)`
+### eol.crlf(<var>text</var>)
+
 * Normalize line endings in <var>text</var> to <b>CRLF</b> (Windows, DOS)
 * Returns string with line endings normalized to `\r\n`
 
-### `eol.lf(text)`
+### eol.lf(<var>text</var>)
+
 * Normalize line endings in <var>text</var> to <b>LF</b> (Unix, OS X)
 * Returns string with line endings normalized to `\n`
 
-### `eol.cr(text)`
+### eol.cr(<var>text</var>)
+
 * Normalize line endings in <var>text</var> to <b>CR</b> (Mac OS)
 * Returns string with line endings normalized to `\r`
 
-### `eol.dub(text)`
+### eol.dub(<var>text</var>)
 
-- [Dubnormalize.](https://github.com/ryanve/eol/pull/32) [Used internally.](eol.js) [Generative.](#dubbing)
-- Create normalizer where linebreaks become <var>text</var>
-- Returns composed function
+* Generate normalizer where linebreaks become <var>text</var>
+* Used [internally](eol.js) to generate the [normalizers](#api) above
+* Returns composed pure function with [creative potential](#dubbing)
 
-### `eol.before(text)`
-- Add linebreak before <var>text</var>
-- Returns string with linebreak added before text
+### eol.before(<var>text</var>)
 
-### `eol.after(text)`
-- Add linebreak after <var>text</var>
-- Returns string with linebreak added after text
+* Add linebreak before <var>text</var>
+* Returns string with linebreak added before text
+* Uses `eol.auto` linebreak
+* `eol.lf(eol.before(text))` &vellip;
 
-### `eol.match(text)`
-- Detect or inspect linebreaks in <var>text</var>
-- Returns array of matched linebreaks
+### eol.after(<var>text</var>)
 
-### `eol.split(text)`
-- Split <var>text</var> by newline
-- Returns array of lines
+* Add linebreak after <var>text</var>
+* Returns string with linebreak added after text
+* Uses `eol.auto` linebreak
+* `eol.lf(eol.after(text))` &vellip;
+
+### eol.match(<var>text</var>)
+
+* Detect or inspect linebreaks in <var>text</var>
+* Returns array of matched linebreaks
+
+### eol.split(<var>text</var>)
+
+* Split <var>text</var> by newline
+* Returns array of lines
 
 ### Joining
 
-Coercing `eol.auto`|`eol.crlf`|`eol.lf`|`eol.cr` to string yields the appropriate character. This is useful for joining.
+Coercing [normalizers](#api) to string yields the appropriate character...useful glue for joining
 
 ```js
 String(eol.lf) // "\n"
-eol.split(text).join(eol.auto) // same as eol.auto(text)
+eol.split(text).join(eol.auto) // === eol.auto(text)
 eol.split(text).filter(line => line).join(eol.auto) // text joined after removing empty lines
 eol.split(text).slice(-3).join(eol.auto) // last 3 lines joined
 ```
@@ -77,16 +82,59 @@ eol.match("world\nwide\nweb") // ["\n","\n"]
 
 ### Dubbing
 
-Mixin friendly
+Generate alternate [normalizers](#api)
 
 ```
-let lflf = eol.dub("\n\n")
-lflf("...")
+let extra = eol.dub("\n\n\n")
+extra("...")
 ```
 
-[<kbd><b>got space</b>?</kbd>](https://github.com/ryanve/ssv)
+```
+let huh = eol.dub("???")
+huh("...")
+```
 
+## modularitY
+
+### [edit-file](https://github.com/ryanve/edit-file)
+
+```js
+let eol = require("eol")
+let edit = require("edit-file")
+
+edit("sample.txt", eol.lf)
+```
+
+### [map-file](https://github.com/ryanve/map-file)
+
+```js
+let eol = require("eol")
+let map = require("map-file")
+
+map({
+  from: "from.txt",
+  to: "to.txt",
+  map: eol.lf
+})
+```
+
+### [ssv](https://ryanve.github.io/ssv)
+
+```js
+let ssv = require("ssv")
+let eol = require("eol")
+
+let deep = eol.split("spaced.txt").map(ssv.split)
+```
+
+### Yours
+
+Have an `eol` sample to share?
+
+[Then please do](../../issues/new) :test_tube: :test_tube: :test_tube: :test_tube:
 
 ## [opensource](package.json)
 
-[`MIT License`](LICENSE.md)
+[<b>MIT</b> License](LICENSE.md)
+
+[**∞/0**](#eol)
