@@ -1,7 +1,7 @@
 {
   "name": "eol",
   "description": "Newline character converter",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "homepage": "https://ryanve.github.io/eol",
   "funding": "https://github.com/sponsors/ryanve",
   "license": "MIT",
