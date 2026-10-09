@@ -43,6 +43,6 @@
   ],
   "devDependencies": {
     "aok": "^1.9.0",
-    "eslint": "^9.9.1"
+    "eslint": "^10.12.0"
   }
 }
